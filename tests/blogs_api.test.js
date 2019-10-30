@@ -262,19 +262,15 @@ describe('creating and editing blogs', () => {
 })
 
 describe('user tests', () => {
-    beforeEach(async () => {
-        await User.deleteMany({})      
-    })
 
-
-    test('creation success with a fresh username', async () => {
+    test.only('creation success with a fresh username', async () => {
  
         const usersAtStart = await helper.usersInDb()
 
         const newUser = {
-            username: 'testaaja',
-            name: 'Teppo Testaaja',
-            password: 'tsalasana',
+            username: 'testaaja3',
+            name: 'Tellervo Testaaja',
+            password: 'tsalasana3',
         }
 
         await api
@@ -382,7 +378,7 @@ describe('password validation tests', () => {
             password: 'pa'
         }
 
-        const res = await api
+        await api
             .post('/api/users')
             .send(newUser)
             .expect(400)
