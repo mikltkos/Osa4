@@ -263,7 +263,7 @@ describe('creating and editing blogs', () => {
 
 describe('user tests', () => {
 
-    test.only('creation success with a fresh username', async () => {
+    test('creation success with a fresh username', async () => {
  
         const usersAtStart = await helper.usersInDb()
 
